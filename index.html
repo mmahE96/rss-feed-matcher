@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Type Submit</title>
+</head>
+<body>
+
+    <h1>Search RSS Feed!</h1>
+    
+    <form action="/" method="POST">
+        <input name="searchTerm" placeholder="searchTerm" autocomplete="off">
+        <button type="submit">Submit</button>
+        </form>
+
+
+{{if .}}
+<main>
+    {{if .Method}}<p>The request method: {{.Method}}</p>{{end}}
+    <div>
+        {{if .Submissions}}
+        <h4>You searched for {{.Submissions.searchTerm}}, last time.</h4>  
+   {{end}}
+   <div>
+    {{if .SearchResults}}
+    <ul>{{range .SearchResults}}</ul>
+    <li>{{.Content}}</li>{{end}}
+  
+            {{end}}
+           
+            
+        </div>
+</div>
+</div>    
+    
+</main>
+{{end}}
+
+
+        
+
+</body>
+</html>
